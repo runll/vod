@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WMPLib;
 
 namespace vod
 {
@@ -16,6 +17,10 @@ namespace vod
         
         public mainForm previous { get; internal set; }
         //List<string> res = new imagePathList().res;
+        public List<mySong> clickRes = new List<mySong>();
+        public int lbIndex = 0;
+        public List<mySong> res = new List<mySong>();
+
         public searchBySingerForm()
         {
             InitializeComponent();
@@ -25,7 +30,7 @@ namespace vod
             myTabPage mtp = new myTabPage();
             mtp.Show();
             //new myTabPage().Show();
-            
+
         }
 
 
@@ -41,8 +46,11 @@ namespace vod
 
         private void returnToMain_Click(object sender, EventArgs e)
         {
+            this.previous.res.AddRange(res);
             this.Close();
+            this.previous.checkPlay();
             this.previous.Show();//显示前驱界面
+            this.previous.Refresh();
 
         }
 
@@ -94,8 +102,21 @@ namespace vod
             listBox1.SelectedIndex = index;
             if (listBox1.SelectedIndex != -1)
             {
-                MessageBox.Show(listBox1.SelectedItem.ToString());
+                //MessageBox.Show(listBox1.SelectedItem.ToString());
+                lbIndex = listBox1.SelectedIndex;
             }
+        }
+        
+        private void myAddButton_Click(object sender, EventArgs e)
+        {
+             res.Add(clickRes[lbIndex]);
+            //MessageBox.Show(clickRes[lbIndex].songName+"\n"+ clickRes[lbIndex].singerName+"\n"+ clickRes[lbIndex].songPath);
+           // ListBox lb = (ListBox)this.previous.Controls.Find("listBox1",true)[0];
+            //lb.Items.Add(clickRes[lbIndex].songName+"-"+ clickRes[lbIndex].singerName);
+            MessageBox.Show("\""+ clickRes[lbIndex].songName + "\"已添加");
+
+            //this.previous.checkPlay();
+            this.previous.Refresh();
         }
     }
 }

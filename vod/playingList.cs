@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace vod
 {
-    class playingList
+    public class playingList
     {
         public List<mySong> playingSongsList = new List<mySong>();
     }

@@ -33,6 +33,7 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.myAddButton = new System.Windows.Forms.Button();
+            this.myTabPage2 = new vod.myTabPage();
             this.SuspendLayout();
             // 
             // returnToMain
@@ -62,12 +63,19 @@
             resources.ApplyResources(this.myAddButton, "myAddButton");
             this.myAddButton.Name = "myAddButton";
             this.myAddButton.UseVisualStyleBackColor = true;
+            this.myAddButton.Click += new System.EventHandler(this.myAddButton_Click);
+            // 
+            // myTabPage2
+            // 
+            resources.ApplyResources(this.myTabPage2, "myTabPage2");
+            this.myTabPage2.Name = "myTabPage2";
             // 
             // searchBySingerForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ControlBox = false;
+            this.Controls.Add(this.myTabPage2);
             this.Controls.Add(this.myAddButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox1);
@@ -85,6 +93,7 @@
         private myTabPage myTabPage1;
         public System.Windows.Forms.ListBox listBox1;
         public System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button myAddButton;
+        private myTabPage myTabPage2;
+        public System.Windows.Forms.Button myAddButton;
     }
 }
