@@ -16,5 +16,7 @@ namespace vod
         {
             InitializeComponent();
         }
+
+        public mainForm previous { get; internal set; }
     }
 }
