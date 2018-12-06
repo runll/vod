@@ -10,6 +10,8 @@ namespace vod
     class mySql
     {
         public List<string> res = new List<string>();
+
+       
         public mySql() {
         }
 

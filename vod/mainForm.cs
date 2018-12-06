@@ -17,8 +17,9 @@ namespace vod
     {
         public int lbIndex = 0;
         public List<mySong> res = new List<mySong>();
-        public Boolean flag = false;
-
+        public Boolean flag = false;//当ax的playingcurrentItems改变时，在不在mainForm了
+        public Boolean hasFlag = false;//检查mainForm的播放列表
+        
 
         public mainForm()
         {
@@ -26,13 +27,12 @@ namespace vod
 
         }
 
+        //init mainForm的播放列表
         public void checkPlay()
         {
-            //新建播放列表，名字为pl
-            axWindowsMediaPlayer1.currentPlaylist = axWindowsMediaPlayer1.newPlaylist("pl", "");
-            foreach (mySong ms in res)
-                axWindowsMediaPlayer1.currentPlaylist.appendItem(axWindowsMediaPlayer1.newMedia(ms.songPath));
-            axWindowsMediaPlayer1.Ctlcontrols.play();
+            //新建播放列表，名字为pl   
+            //axWindowsMediaPlayer1.currentPlaylist = axWindowsMediaPlayer1.newPlaylist("pl", "");
+
             if (res.Count == 0)
             {
                 label3.Text = "null";
@@ -69,10 +69,6 @@ namespace vod
         }
         private void axWindowsMediaPlayer1_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
         {
-            //if ((int)e.newState == 1)
-            //    MessageBox.Show("当前歌曲播放完毕，GKD");
-
-
 
         }
 
@@ -84,6 +80,11 @@ namespace vod
             sb.Show();
             sb.previous = this;
             listBox1.Items.Clear();
+            flag = false;
+            if (hasFlag == false)
+                axWindowsMediaPlayer1.currentPlaylist = axWindowsMediaPlayer1.newPlaylist("pl", "");
+            hasFlag = true;
+
         }
 
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
@@ -109,11 +110,7 @@ namespace vod
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-
             label3.Text = label3.Text.Substring(1) + label3.Text.Substring(0, 1);
-
-            // label4.Text = label4.Text.Substring(1) + label4.Text.Substring(0, 1);
-
         }
 
         private void timer2_Tick(object sender, EventArgs e)
@@ -126,9 +123,11 @@ namespace vod
 
         }
 
+        //切歌
         private void label2_Click(object sender, EventArgs e)
         {
-            flag = false;
+            flag = false;//在这里已经对res操作了，不需要再跳转到axWindowsMediaPlayer1_CurrentItemChange
+
             axWindowsMediaPlayer1.Ctlcontrols.stop();
             listBox1.Items.Clear();
             if (res.Count == 0)
@@ -167,10 +166,11 @@ namespace vod
                     listBox1.Items.Add(res[i].songName + "-" + res[i].singerName + "  ");
                 }
             }
-            axWindowsMediaPlayer1.currentPlaylist = axWindowsMediaPlayer1.newPlaylist("pl", "");
+            axWindowsMediaPlayer1.currentPlaylist.clear();
             foreach (mySong ms in res)
                 axWindowsMediaPlayer1.currentPlaylist.appendItem(axWindowsMediaPlayer1.newMedia(ms.songPath));
             axWindowsMediaPlayer1.Ctlcontrols.play();
+            flag = true;
         }
 
         private void searchByLanguage_Click(object sender, EventArgs e)
@@ -180,6 +180,10 @@ namespace vod
             sb.Show();
             sb.previous = this;
             flag = false;
+            if (hasFlag == false)
+                axWindowsMediaPlayer1.currentPlaylist = axWindowsMediaPlayer1.newPlaylist("pl", "");
+            hasFlag = true;
+
         }
 
         private void searchByPinyin_Click(object sender, EventArgs e)
@@ -188,12 +192,14 @@ namespace vod
             this.Hide();
             sb.Show();
             sb.previous = this;
+            flag = false;
         }
 
         private void axWindowsMediaPlayer1_CurrentItemChange(object sender, _WMPOCXEvents_CurrentItemChangeEvent e)
         {
             if (flag == true)
             {
+                //axWindowsMediaPlayer1.Ctlcontrols.stop();
                 listBox1.Items.Clear();
                 if (res.Count == 0)
                 {

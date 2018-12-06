@@ -18,8 +18,8 @@ namespace vod
         public mainForm previous { get; internal set; }
         //List<string> res = new imagePathList().res;
         public List<mySong> clickRes = new List<mySong>();
-        public int lbIndex = 0;
         public List<mySong> res = new List<mySong>();
+        public int lbIndex = 0;
 
         public searchBySingerForm()
         {
@@ -46,11 +46,25 @@ namespace vod
 
         private void returnToMain_Click(object sender, EventArgs e)
         {
-            this.previous.res.AddRange(res);
-            this.Close();
+            if (this.previous.res.Count == 0)
+            {
+                this.previous.res.AddRange(res);
+                foreach (mySong ms in this.previous.res)
+                    this.previous.axWindowsMediaPlayer1.currentPlaylist.appendItem
+                        (this.previous.axWindowsMediaPlayer1.newMedia(ms.songPath));
+                this.previous.axWindowsMediaPlayer1.Ctlcontrols.play();
+            }
+            else
+            {
+                this.previous.res.AddRange(res);
+                foreach (mySong ms in this.previous.res)
+                    this.previous.axWindowsMediaPlayer1.currentPlaylist.appendItem
+                        (this.previous.axWindowsMediaPlayer1.newMedia(ms.songPath));
+            }
             this.previous.checkPlay();
-            this.previous.Show();//显示前驱界面
+            this.Close();
             this.previous.Refresh();
+            this.previous.Show();//显示前驱界面
             this.previous.flag = true;
 
         }
@@ -110,7 +124,8 @@ namespace vod
         
         private void myAddButton_Click(object sender, EventArgs e)
         {
-            if (res.Contains(clickRes[lbIndex]))
+            //contain有误，待修正
+            if (this.previous.res.Contains(clickRes[lbIndex])||res.Contains(clickRes[lbIndex]))
                 MessageBox.Show("添加失败！\n\"" + clickRes[lbIndex].songName + "\"已存在");
             else
             {

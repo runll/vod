@@ -17,7 +17,7 @@ namespace vod
         public mySong(string songName,string singerName) {
             this.songName = songName;
             this.singerName = singerName;
-            singerName = "";
+            songPath = "";
         }
 
     }

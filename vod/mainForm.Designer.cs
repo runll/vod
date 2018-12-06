@@ -36,6 +36,7 @@
             this.searchByRank = new System.Windows.Forms.Button();
             this.searchByLanguage = new System.Windows.Forms.Button();
             this.searchBySinger = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,7 +46,6 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -133,6 +133,17 @@
             this.searchBySinger.UseVisualStyleBackColor = true;
             this.searchBySinger.Click += new System.EventHandler(this.searchBySinger_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(243, 121);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(21, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "replay";
+            this.toolTip1.SetToolTip(this.button1, "重新播放当前歌曲");
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // label4
             // 
             this.label4.Location = new System.Drawing.Point(95, 170);
@@ -203,17 +214,6 @@
             this.timer2.Interval = 2000;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(243, 121);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(21, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "replay";
-            this.toolTip1.SetToolTip(this.button1, "重新播放当前歌曲");
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -246,15 +246,15 @@
         private System.Windows.Forms.Button searchByRank;
         private System.Windows.Forms.Button searchByLanguage;
         private System.Windows.Forms.Button searchBySinger;
-        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
         public System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         public System.Windows.Forms.Label label4;
         public System.Windows.Forms.Label label3;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button button1;
+        public AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
+        public System.Windows.Forms.Label label2;
     }
 }
