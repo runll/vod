@@ -104,7 +104,7 @@
             // myAddButton
             // 
             this.myAddButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.myAddButton.Location = new System.Drawing.Point(735, 389);
+            this.myAddButton.Location = new System.Drawing.Point(735, 456);
             this.myAddButton.Name = "myAddButton";
             this.myAddButton.Size = new System.Drawing.Size(208, 29);
             this.myAddButton.TabIndex = 7;

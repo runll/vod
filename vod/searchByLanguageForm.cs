@@ -175,6 +175,7 @@ namespace vod
                 foreach (mySong ms in this.previous.res)
                     this.previous.axWindowsMediaPlayer1.currentPlaylist.appendItem
                         (this.previous.axWindowsMediaPlayer1.newMedia(ms.songPath));
+                this.previous.axWindowsMediaPlayer1.URL = res[0].songPath;
                 this.previous.axWindowsMediaPlayer1.Ctlcontrols.play();
             }
             else

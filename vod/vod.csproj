@@ -75,6 +75,11 @@
     <Compile Include="playingList.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="searchByLanguageForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +91,12 @@
     </Compile>
     <Compile Include="searchByPinyinForm.Designer.cs">
       <DependentUpon>searchByPinyinForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="searchByRankForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="searchByRankForm.Designer.cs">
+      <DependentUpon>searchByRankForm.cs</DependentUpon>
     </Compile>
     <Compile Include="searchBySingerForm.cs">
       <SubType>Form</SubType>
@@ -104,19 +115,17 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="searchByLanguageForm.resx">
       <DependentUpon>searchByLanguageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="searchByPinyinForm.resx">
       <DependentUpon>searchByPinyinForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="searchByRankForm.resx">
+      <DependentUpon>searchByRankForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="searchBySingerForm.resx">
       <DependentUpon>searchBySingerForm.cs</DependentUpon>
@@ -155,6 +164,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\未知艺术家.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\alert .png" />
+    <None Include="Resources\letters\Z.png" />
+    <None Include="Resources\letters\Y.png" />
+    <None Include="Resources\letters\X.png" />
+    <None Include="Resources\letters\W.png" />
+    <None Include="Resources\letters\V.png" />
+    <None Include="Resources\letters\U.png" />
+    <None Include="Resources\letters\T.png" />
+    <None Include="Resources\letters\S.png" />
+    <None Include="Resources\letters\R.png" />
+    <None Include="Resources\letters\Q.png" />
+    <None Include="Resources\letters\P.png" />
+    <None Include="Resources\letters\O.png" />
+    <None Include="Resources\letters\N.png" />
+    <None Include="Resources\letters\M.png" />
+    <None Include="Resources\letters\L.png" />
+    <None Include="Resources\letters\K.png" />
+    <None Include="Resources\letters\J.png" />
+    <None Include="Resources\letters\I.png" />
+    <None Include="Resources\letters\H.png" />
+    <None Include="Resources\letters\G.png" />
+    <None Include="Resources\letters\F.png" />
+    <None Include="Resources\letters\E.png" />
+    <None Include="Resources\letters\D.png" />
+    <None Include="Resources\letters\C.png" />
+    <None Include="Resources\letters\B.png" />
+    <None Include="Resources\letters\A.png" />
+    <None Include="Resources\R.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
