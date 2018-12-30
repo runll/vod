@@ -110,6 +110,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.button1);
@@ -477,6 +478,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.pictureBox26);
             this.panel2.Controls.Add(this.pictureBox25);
             this.panel2.Controls.Add(this.pictureBox24);
@@ -523,6 +525,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::vod.Properties.Resources.gezi;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1000, 618);
             this.ControlBox = false;
             this.Controls.Add(this.returnToMain);
@@ -531,6 +535,7 @@
             this.Controls.Add(this.myAddButton);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.panel1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "searchByPinyinForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

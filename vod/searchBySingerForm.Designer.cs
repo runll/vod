@@ -67,6 +67,7 @@
             // 
             // myTabPage2
             // 
+            this.myTabPage2.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.myTabPage2, "myTabPage2");
             this.myTabPage2.Name = "myTabPage2";
             // 
@@ -74,6 +75,7 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::vod.Properties.Resources.ocean2;
             this.ControlBox = false;
             this.Controls.Add(this.myTabPage2);
             this.Controls.Add(this.myAddButton);

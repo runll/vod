@@ -60,6 +60,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(734, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 12);
@@ -68,19 +69,22 @@
             // 
             // returnToMain
             // 
+            this.returnToMain.BackColor = System.Drawing.Color.Transparent;
             this.returnToMain.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.returnToMain.Location = new System.Drawing.Point(603, 52);
             this.returnToMain.Name = "returnToMain";
             this.returnToMain.Size = new System.Drawing.Size(86, 28);
             this.returnToMain.TabIndex = 10;
             this.returnToMain.Text = "return";
-            this.returnToMain.UseVisualStyleBackColor = true;
+            this.returnToMain.UseVisualStyleBackColor = false;
             this.returnToMain.Click += new System.EventHandler(this.returnToMain_Click);
             // 
             // searchByRankForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::vod.Properties.Resources.boom;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1000, 618);
             this.Controls.Add(this.returnToMain);
             this.Controls.Add(this.label1);

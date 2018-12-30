@@ -24,11 +24,18 @@ namespace vod
         public mainForm()
         {
             InitializeComponent();
+            this.DoubleBuffered = true;
+            this.SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint | ControlStyles.OptimizedDoubleBuffer, true);
 
         }
-
-        //init mainForm的播放列表
-        public void checkPlay()
+         protected override void WndProc(ref Message m)
+ {
+     if (m.Msg == 0x0014) // 禁掉清除背景消息
+       return;
+     base.WndProc(ref m);
+ }
+    //init mainForm的播放列表
+    public void checkPlay()
         {
             //新建播放列表，名字为pl   
             //axWindowsMediaPlayer1.currentPlaylist = axWindowsMediaPlayer1.newPlaylist("pl", "");
@@ -283,5 +290,17 @@ namespace vod
         {
             MessageBox.Show("播放出错？点击下一首即可");
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            signIn si = new signIn();
+            this.Hide();
+            si.previous = this;
+            si.Show();
+            
+            
+        }
+
+ 
     }
 }

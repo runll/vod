@@ -58,6 +58,12 @@
     <Compile Include="mainForm.Designer.cs">
       <DependentUpon>mainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="manegerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="manegerForm.Designer.cs">
+      <DependentUpon>manegerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="myPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -71,6 +77,9 @@
     </Compile>
     <Compile Include="myTabPage.Designer.cs">
       <DependentUpon>myTabPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PanelEnhanced.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="playingList.cs" />
     <Compile Include="Program.cs" />
@@ -104,8 +113,17 @@
     <Compile Include="searchBySingerForm.Designer.cs">
       <DependentUpon>searchBySingerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="signIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="signIn.Designer.cs">
+      <DependentUpon>signIn.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="manegerForm.resx">
+      <DependentUpon>manegerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="myPanel.resx">
       <DependentUpon>myPanel.cs</DependentUpon>
@@ -129,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="searchBySingerForm.resx">
       <DependentUpon>searchBySingerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="signIn.resx">
+      <DependentUpon>signIn.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -167,6 +188,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\alert .png" />
+    <None Include="Resources\gezi.jpg" />
+    <None Include="Resources\boom.jpg" />
+    <None Include="Resources\ocean2.jpg" />
+    <None Include="Resources\mitch-lensink-236502-unsplash.jpg" />
+    <None Include="Resources\pan.jpg" />
+    <None Include="Resources\shawdow.jpg" />
+    <None Include="Resources\ocean1.jpg" />
+    <None Include="Resources\hearphone.jpg" />
+    <None Include="Resources\return.png" />
+    <None Include="Resources\update.png" />
     <None Include="Resources\letters\Z.png" />
     <None Include="Resources\letters\Y.png" />
     <None Include="Resources\letters\X.png" />

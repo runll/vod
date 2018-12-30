@@ -95,6 +95,7 @@ namespace vod
 
         MySqlCommand mysqlcmd_Query = new MySqlCommand(s, con);
         MySqlDataReader dataReader = mysqlcmd_Query.ExecuteReader();
+            
         int count = dataReader.FieldCount;
         //dataReader.Read();
         while (dataReader.Read())
