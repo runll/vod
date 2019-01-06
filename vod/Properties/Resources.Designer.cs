@@ -133,6 +133,16 @@ namespace vod.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap close {
+            get {
+                object obj = ResourceManager.GetObject("close", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap D {
             get {
                 object obj = ResourceManager.GetObject("D", resourceCulture);
@@ -376,6 +386,16 @@ namespace vod.Properties {
         internal static System.Drawing.Bitmap shawdow {
             get {
                 object obj = ResourceManager.GetObject("shawdow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap simple {
+            get {
+                object obj = ResourceManager.GetObject("simple", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -160,7 +160,9 @@ namespace vod
 
         private void button1_Click(object sender, EventArgs e)
         {
-            textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length-1,1);
+            if(!textBox1.Text.Equals(""))
+                textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length-1,1);
+            
         }
 
         private void search_Click(object sender, EventArgs e)
@@ -173,7 +175,7 @@ namespace vod
             {
                 //不能智能纠错
                 List<string> midRes = 
-               new mySql("select Siname,Sino from singers where Sipy like '%" + textBox1.Text+"%'").res;
+               new mySql("select Siname,Sino from singers where to_pinyin(Siname) like '%" + textBox1.Text+"%'").res;
                 if (midRes.Count == 0)
                     MessageBox.Show("结果为空！");
                 List<string> singerName = new List<string>();
@@ -270,13 +272,19 @@ namespace vod
                 MessageBox.Show("添加失败！\n\"" + clickRes[lbIndex].songName + "\"已存在");
             else
             {
-                res.Add(clickRes[lbIndex]); 
+                res.Add(clickRes[lbIndex]);
+                new mySql("update songs set Socount = Socount + 1 where Soname = '" + clickRes[lbIndex].songName + "'");
                 MessageBox.Show("\"" + clickRes[lbIndex].songName + "\"已添加");
             }
             this.previous.Refresh();
         }
 
         private void returnToMain_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox27_Click(object sender, EventArgs e)
         {
             if (this.previous.res.Count == 0)
             {

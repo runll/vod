@@ -30,10 +30,6 @@ namespace vod
 
         private void label1_Click(object sender, EventArgs e)
         {
-            //TODO
-            //由label1.Text歌手名字搜索对应的歌曲，并以列表（歌名+歌手）返回到一个容器中
-            //点击该容器里的每一条数据结构可添加到播放列表中
-            //播放列表还没实现
             
             string singerName = label1.Text;
             List<string> sino = new mySql("select Sino from singers where Siname = '"+singerName+"'").res;

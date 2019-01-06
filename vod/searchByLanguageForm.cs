@@ -161,6 +161,7 @@ namespace vod
                 //    (this.previous.axWindowsMediaPlayer1.newMedia(clickRes[lbIndex].songPath));
                res.Add(clickRes[lbIndex]);
                 //this.previous.listBox1.Items.Add(clickRes[lbIndex].songName + "-" + clickRes[lbIndex].singerName + "  ");
+                new mySql("update songs set Socount = Socount + 1 where Soname = '"+ clickRes[lbIndex].songName+"'");
                 MessageBox.Show("\""+ clickRes[lbIndex].songName + "\"已添加");
             }
             this.previous.Refresh();
@@ -168,6 +169,11 @@ namespace vod
         }
 
         private void returnToMain_Click(object sender, EventArgs e)
+        {           
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
         {
             if (this.previous.res.Count == 0)
             {
@@ -175,7 +181,7 @@ namespace vod
                 foreach (mySong ms in this.previous.res)
                     this.previous.axWindowsMediaPlayer1.currentPlaylist.appendItem
                         (this.previous.axWindowsMediaPlayer1.newMedia(ms.songPath));
-               // this.previous.axWindowsMediaPlayer1.URL = res[0].songPath;
+                // this.previous.axWindowsMediaPlayer1.URL = res[0].songPath;
                 this.previous.axWindowsMediaPlayer1.Ctlcontrols.play();
             }
             else
@@ -184,7 +190,7 @@ namespace vod
                 foreach (mySong ms in this.previous.res)
                     this.previous.axWindowsMediaPlayer1.currentPlaylist.appendItem
                         (this.previous.axWindowsMediaPlayer1.newMedia(ms.songPath));
-            }  
+            }
             this.previous.checkPlay();
             //this.previous.listBox1.Items.Add("-------------");
             //foreach (mySong ms in this.previous.res)
@@ -196,9 +202,6 @@ namespace vod
             this.previous.Refresh();
             this.previous.Show();//显示前驱界面
             this.previous.flag = true;
-            
-
-
         }
     }
 }

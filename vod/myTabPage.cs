@@ -20,8 +20,8 @@ namespace vod
             InitializeComponent();
             foreach (System.Windows.Forms.TabPage tp in this.tabControl1.TabPages)
             {
-                myPanel myPanel1 = new myPanel(19,30);
                 
+                myPanel myPanel1 = new myPanel(19,30);
                 tp.Controls.Add(myPanel1);
                 myPanel myPanel2 = new myPanel(19, 260);
                 tp.Controls.Add(myPanel2);
@@ -50,14 +50,23 @@ namespace vod
         /// </summary>
         /// <param name="mp"></param>
         public void addImagth(myPanel mp) {
-            if (count<iPath.Count) {
-                mp.pictureBox1.ImageLocation = iPath[count];
-                string[] imageName = iPath[count].Split('\\');
-                string singerNameBySplit = imageName[imageName.Length - 1].Split('.')[0];
-                mp.label1.Text = singerNameBySplit;
-                
+            try
+            {
+                if (count < iPath.Count)
+                {
+                    mp.pictureBox1.ImageLocation = iPath[count];
+                    string[] imageName = iPath[count].Split('\\');
+                    string singerNameBySplit = imageName[imageName.Length - 1].Split('.')[0];
+                    mp.label1.Text = singerNameBySplit;
+
                     count++;
+                }
             }
+            catch
+            {
+                MessageBox.Show("无效的图片路径！");
+            }
+
         }
     }
 }

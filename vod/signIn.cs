@@ -41,7 +41,7 @@ namespace vod
                 if (my.res[i].Equals(textBox1.Text.Trim()) && i % 2 == 0 && my.res[i + 1].Equals(textBox2.Text.Trim()))
                 {
                     MessageBox.Show("欢迎您！\n管理员 " + textBox1.Text);
-                    manegerForm mf = new manegerForm();
+                    managerForm mf = new managerForm();
                     mf.previous = this.previous;
                     mf.Show();
                     this.Hide();

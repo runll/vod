@@ -57,6 +57,7 @@ namespace vod
             else
             {
                 res.Add(clickRes[lbIndex]);
+                new mySql("update songs set Socount = Socount + 1 where Soname = '" + clickRes[lbIndex].songName + "'");
                 MessageBox.Show("\"" + clickRes[lbIndex].songName + "\"已添加");
             }
             this.previous.Refresh();
@@ -74,6 +75,11 @@ namespace vod
         }
 
         private void returnToMain_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox27_Click(object sender, EventArgs e)
         {
             if (this.previous.res.Count == 0)
             {

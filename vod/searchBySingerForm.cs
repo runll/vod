@@ -46,26 +46,7 @@ namespace vod
 
         private void returnToMain_Click(object sender, EventArgs e)
         {
-            if (this.previous.res.Count == 0)
-            {
-                this.previous.res.AddRange(res);
-                foreach (mySong ms in this.previous.res)
-                    this.previous.axWindowsMediaPlayer1.currentPlaylist.appendItem
-                        (this.previous.axWindowsMediaPlayer1.newMedia(ms.songPath));
-                this.previous.axWindowsMediaPlayer1.Ctlcontrols.play();
-            }
-            else
-            {
-                this.previous.res.AddRange(res);
-                foreach (mySong ms in this.previous.res)
-                    this.previous.axWindowsMediaPlayer1.currentPlaylist.appendItem
-                        (this.previous.axWindowsMediaPlayer1.newMedia(ms.songPath));
-            }
-            this.previous.checkPlay();
-            this.Close();
-            this.previous.Refresh();
-            this.previous.Show();//显示前驱界面
-            this.previous.flag = true;
+ 
 
         }
 
@@ -130,9 +111,34 @@ namespace vod
             else
             {
                 res.Add(clickRes[lbIndex]);
+                new mySql("update songs set Socount = Socount + 1 where Soname = '" + clickRes[lbIndex].songName + "'");
                 MessageBox.Show("\"" + clickRes[lbIndex].songName + "\"已添加");
             }
             this.previous.Refresh();
+        }
+
+        private void pictureBox27_Click(object sender, EventArgs e)
+        {
+            if (this.previous.res.Count == 0)
+            {
+                this.previous.res.AddRange(res);
+                foreach (mySong ms in this.previous.res)
+                    this.previous.axWindowsMediaPlayer1.currentPlaylist.appendItem
+                        (this.previous.axWindowsMediaPlayer1.newMedia(ms.songPath));
+                this.previous.axWindowsMediaPlayer1.Ctlcontrols.play();
+            }
+            else
+            {
+                this.previous.res.AddRange(res);
+                foreach (mySong ms in this.previous.res)
+                    this.previous.axWindowsMediaPlayer1.currentPlaylist.appendItem
+                        (this.previous.axWindowsMediaPlayer1.newMedia(ms.songPath));
+            }
+            this.previous.checkPlay();
+            this.Close();
+            this.previous.Refresh();
+            this.previous.Show();//显示前驱界面
+            this.previous.flag = true;
         }
     }
 }

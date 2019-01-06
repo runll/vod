@@ -58,11 +58,11 @@
     <Compile Include="mainForm.Designer.cs">
       <DependentUpon>mainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="manegerForm.cs">
+    <Compile Include="managerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="manegerForm.Designer.cs">
-      <DependentUpon>manegerForm.cs</DependentUpon>
+    <Compile Include="managerForm.Designer.cs">
+      <DependentUpon>managerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="myPanel.cs">
       <SubType>UserControl</SubType>
@@ -78,10 +78,6 @@
     <Compile Include="myTabPage.Designer.cs">
       <DependentUpon>myTabPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="PanelEnhanced.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="playingList.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -122,8 +118,8 @@
     <EmbeddedResource Include="mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="manegerForm.resx">
-      <DependentUpon>manegerForm.cs</DependentUpon>
+    <EmbeddedResource Include="managerForm.resx">
+      <DependentUpon>managerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="myPanel.resx">
       <DependentUpon>myPanel.cs</DependentUpon>
@@ -188,6 +184,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\alert .png" />
+    <None Include="Resources\close.png" />
+    <None Include="Resources\simple.jpg" />
     <None Include="Resources\gezi.jpg" />
     <None Include="Resources\boom.jpg" />
     <None Include="Resources\ocean2.jpg" />
